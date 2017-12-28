@@ -1,0 +1,26 @@
+
+    <h2>Organization: {{members.organization}} <img class="olm"src="assets/lobster.png"/> </h2>
+    <h3>Location: {{members.location}}</h3>
+    
+
+    <h4>Teams</h4>
+        <span *ngFor="let team of members.teams">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header> 
+                    <mat-panel-title >
+                    {{team.team}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    Tap to see details
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                    <mat-card *ngFor="let member of team.members">
+                            <mat-card-title>{{member.name}}</mat-card-title>
+                            <mat-card-subtitle>{{member.age}}</mat-card-subtitle>
+                            <img mat-card-avatar [src]="member.imageUrl">
+                    </mat-card>
+
+
+            </mat-expansion-panel>
+        
+        </span>
